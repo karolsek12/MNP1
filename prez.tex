@@ -1,0 +1,119 @@
+\documentclass{beamer}
+% Theme selection
+\usetheme{Madrid}
+\usecolortheme{seagull}
+\setbeamertemplate{footline}[frame number]{}
+\setbeamertemplate{navigation symbols}{}
+
+% Packages
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{hyperref}
+\usepackage[T1]{fontenc}
+
+% Presentation metadata$
+\title{Aproksymacja średniokwadratowa ciągła w przestrzeni $L_w^2(-1,1)$ dla $w(x) = 1$ w bazie wielomianów Legendre'a}
+\subtitle{}
+\author{Karol Sęk\\~\\
+334831}
+\institute{grupa 5c\\~\\
+czwartek 13:15}
+\date{projekt 1\\~\\
+zadanie 51}
+\setbeamerfont{institute}{size=\normalsize}
+\setbeamerfont{date}{size=\normalsize}
+\setbeamerfont{author}{size=\normalsize}
+
+
+\begin{document}
+
+% Title slide
+\frame{\titlepage}
+
+% Table of contents
+\begin{frame}
+\frametitle{Spis treści}
+\tableofcontents
+\end{frame}
+
+% Section 1
+\section{Wprowadzenie}
+\begin{frame}
+\frametitle{Wprowadzenie}
+\begin{alertblock}{Problem}
+    Niech $f \in  L_w^2(-1,1)$ Niech $N \in \mathbb{N}$\\
+    Należy znaleźć współczynniki $\alpha_i \in \mathbb{R}$,  $i \in [N]$, \\
+    takie, że, dla funkcji $f^* = \sum_{i=1}^{N}\alpha_i P_i$\\
+    ~\\
+    \centerline{$||f - f^*||$ jest najmniejsze.}\\
+    ~\\
+    Gdzie $P_i$ - wielomian Legendre'a $i-1$ stopnia\\
+
+\end{alertblock}
+
+\end{frame}
+
+
+\begin{frame}
+
+\frametitle{Wprowadzenie}
+\begin{block}{Twierdzenie}
+
+    Niech $V$ - przestrzeń Hilberta, $D<V$\\
+    Element $f^* \in D$ jest elementem optymalnym dla $f \in V$\\
+    względem podprzestrzeni D wtedy i tylko wtedy gdy\\
+    \centerline{$\forall_{g \in D }$ <$f - f^*$,$g$> $= 0$.}
+\end{block}
+
+Twierdzenie to bardzo ułatwia rozwiązanie problemu.\\
+Zakładająć, że $D = \mathbb{R}_{N-1}[x]$, oraz $D = \mathcal{L}(P_1, P_2, P_3, ... , P_{N-1}).$\\~\\
+\centerline{Element $f^*$ jest optymalny wtedy i tylko wtedy gdy}
+\centerline{$\forall_{g \in D }$ <$f - \sum\limits_{j=1}^{N}\alpha_j P_j$,$g$> $= 0$}\\
+Jest to równoważne zdaniu:\\
+\centerline{$\forall_{i \in [N-1] }$ <$f - \sum\limits_{j=1}^{N}\alpha_j P_j$,$P_i$> $= 0$}\\
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Wprowadzenie}
+
+\centerline{<$f - \sum\limits_{j=1}^{N}\alpha_j P_j$,$P_i$> $= 0$}\\~\\
+\centerline{$\iff$}\\~\\
+\centerline{<$f$,$P_i$>  $-$  <$\sum\limits_{j=1}^{N}\alpha_j P_j$,$P_i$> $= 0$}\\
+\centerline{$\iff$}\\~\\
+\centerline{<$f$,$P_i$>  $= $<$\sum\limits_{j=1}^{N}\alpha_j P_j$,$P_i$>}\\~\\
+
+Problem został sprowadzony do rozwiązania układu równań liniowych.\\
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Wprowadzenie}
+\begin{block}{Twierdzenie}
+$\forall_{i,j \in \mathbb{N}}$ $P_i * P_J = \frac{2}{2i-1}\delta_{ij}$
+
+\end{block}
+Powyższe twierdzenie znacząco upraszcza wyprowadzony układ równań.\\
+\centerline{<$f$,$P_i$>  $= $<$\sum\limits_{j=1}^{N}\alpha_j P_j$,$P_i$>}\\~\\
+\centerline{$\iff$}\\~\\
+\centerline{<$f$,$P_i$>  $= \alpha_i * \frac{2}{2i-1} $}\\
+
+\end{frame}
+
+% Section 2
+\section{Main Content}
+\begin{frame}
+\frametitle{Key Concepts}
+\begin{block}{Definition}
+    A block environment for definitions
+\end{block}
+\begin{alertblock}{Important}
+    An alert block for warnings
+\end{alertblock}
+\begin{exampleblock}{Example}
+    An example block
+\end{exampleblock}
+\end{frame}
+
+\end{document}
