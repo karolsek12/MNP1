@@ -1,4 +1,4 @@
-function  Testnumgetapro(f,N,n)
+function  testnumApro(f,N,n)
 
 x = linspace(-1,1,1000);
 
