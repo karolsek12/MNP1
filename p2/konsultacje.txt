@@ -1,0 +1,19 @@
+1. problem z dzieleniem
+- f showcase
+
+
+2. jakie testy poprawności
+- weryfikacja rzędu
+- test złych wyników dla sztywnych funkcji????
+- ???
+
+
+3. jakie testy numeryczne
+- błąd max/średni
+- wykres
+- porównanie z inną tabelą butchera?
+
+
+4. dodatkowo
+- richardson??
+- metoda adaptacyjna??
