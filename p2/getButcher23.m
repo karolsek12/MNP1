@@ -1,17 +1,11 @@
-function b = getButcher23(g,Y,x,h)
+function b = getButcher23(g,Y,x,h,table)
 
-B = [   0  0 0 0;
-      1/3  0 0 0
-     -1/3  1 0 0;
-        1 -1 1 0];
-
-C = [1/8,3/8,3/8,1/8];
+[B,C] = getTableau(table);
 
 lg = length(g);
 ly = length(Y);
 
 K = zeros(ly,4);
-
 
 G = cell(ly,lg);
 simple = @(x) 1;
@@ -21,10 +15,8 @@ for j = 1:lg
     G{ly,j} = g{j};
 end
 
-
 for j = 1:ly-1
 
-    
     for s = 1:lg
         G{j,s} = empty;
     end
@@ -33,9 +25,7 @@ for j = 1:ly-1
 
 end
 
-K(:,1) = h*calcF(G,Y,x);
-
-for j = 2:4 % can be optimised
+for j = 1:4
 
     nx = 0;
     yx = zeros(size(Y));

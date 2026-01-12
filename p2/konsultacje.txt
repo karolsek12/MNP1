@@ -12,6 +12,7 @@
 - błąd max/średni
 - wykres
 - porównanie z inną tabelą butchera?
+- porównanie z ralstonem
 
 
 4. dodatkowo

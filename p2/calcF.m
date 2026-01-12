@@ -15,7 +15,7 @@ end
 
 for s = 1:k
     
-        F(s) = F(s) +G{s,1}(x);
+    F(s) = F(s) +G{s,1}(x);
 
 end
 
