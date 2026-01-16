@@ -1,6 +1,19 @@
 function [B,C] = getTableau(table)
+% Projekt 2, zadanie 47
+% Karol Sęk, 334831
+% 
+% Funkcja zwracająca macierz i wektor odpowiadającym wartościom pewnej
+% tabeli Butcher'a.
+% WEJŚCIE
+%   table - argument wyznaczający tabelkę Butcher'a 
+%   użytą w obliczeniech, 0 - tabela 3/8, 1 - tabela klasyczna, 
+%   inna wartość - tabela ralstona
+% WYJŚCIE
+%   B - macierz zawierającą wartości tabeli Butcher'a, bez ostatniego 
+%   wiersza.
+%   C - wektor zawierający wartości ostatniego wiersza tabeli Butcher'a.
 
-if(table == 0)
+if(table == 0) % Tabela 3/8
 
     B = [   
         0    0  0 0 0;
@@ -10,7 +23,7 @@ if(table == 0)
 
     C = [1/8,3/8,3/8,1/8];
 
-elseif(table == 1)
+elseif(table == 1) % Tabela klasyczna
 
     B = [   
         0   0   0 0 0;
@@ -20,7 +33,7 @@ elseif(table == 1)
 
     C = [1/6,1/3,1/3,1/6]; 
 
-else
+else % Tabela Ralstona
     sr5 = sqrt(5);
     B = zeros(4,5);
     B(2,1) = 2/5;
@@ -37,7 +50,4 @@ else
          (125 - 1000*sr5)/3828,...
          (3426304 + 1661952*sr5)/5924787,...
          (30 -4*sr5)/123];
-    
-end
-
 end

@@ -1,5 +1,10 @@
 function test1()
-
+% Projekt 2, zadanie 47
+% Karol Sęk, 334831
+% 
+% Funkcja będąca testem poprawności zaimplementowanej metody Runge'a Kutty.
+% Sprawdzany jest stosunek błędu lokalnego i globalnego, stosunek punktów
+% w każdym kroku jest równy 2.
 [f,functions,equations,a,b,x0,xN,y0] = getTest1Data();
 
 for j = 1:5
@@ -7,16 +12,15 @@ for j = 1:5
     fprintf("Test: %d\n\n", j);
     fprintf("Równanie: %s\n",equations(j));
     fprintf("Rozwiązanie: y = %s\n",functions(j));
-    fprintf("Przedział x0 = %d, xN = %d\n\n",x0(j),xN(j))
-    N = 4;
+    fprintf("Przedział: x0 = %d, xN = %d\n\n",x0(j),xN(j))
+    N = 4; % Początkowa ilość punktów.
 
-    I = 7;
+    I = 7; % Ilość powtórzeń dla każdego testu.
 
     g = zeros(1,I);
     lok = zeros(1,I);
 
     for w = 1:I
-
         x = linspace(x0(j),xN(j),N+1);
         y = f{j}(x);
         yr = runge(b{j},a{j},x0(j),xN(j),y0{j},N);
@@ -24,7 +28,6 @@ for j = 1:5
         g(w) = max(abs(y-yr));
         lok(w) = abs(y(2) - yr(2));
         N = N*2;
-
     end
     
 
@@ -32,23 +35,16 @@ for j = 1:5
     rl = lok(2:I)./lok(1:I-1);
 
     for w = 1:(I-1)
-    
         fprintf("Stosunek błędu globalnego dla N = %d i N = %d: %d\n",2^(w+2),2^(w+1),rg(w));
-
     end
     
     fprintf("Oczekiwany stosunek błedu globalnego: 6.25e-02\n\n");
 
     for w = 1:(I-1)
-    
         fprintf("Stosunek błędu lokalnego dla N = %d i N = %d: %d\n",2^(w+2),2^(w+1),rl(w));
-        
     end
         
     fprintf("Oczekiwany stosunek błedu lokalnego: 3.125e-02\n")
     pause('on');
     pause();
-
-end
-
 end
