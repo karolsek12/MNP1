@@ -6,8 +6,9 @@ for j = 1:5
 
     fprintf("Test: %d\n\n", j);
     fprintf("Równanie: %s\n",equations(j));
-    fprintf("Rozwiązanie: y = %s,\n\n",functions(j));
-    N = 2;
+    fprintf("Rozwiązanie: y = %s\n",functions(j));
+    fprintf("Przedział x0 = %d, xN = %d\n\n",x0(j),xN(j))
+    N = 4;
 
     I = 7;
 
@@ -32,7 +33,7 @@ for j = 1:5
 
     for w = 1:(I-1)
     
-        fprintf("Stosunek błędu globalnego dla N = %d i N = %d: %d\n",2^(w+1),2^w,rg(w));
+        fprintf("Stosunek błędu globalnego dla N = %d i N = %d: %d\n",2^(w+2),2^(w+1),rg(w));
 
     end
     
@@ -40,10 +41,11 @@ for j = 1:5
 
     for w = 1:(I-1)
     
-        fprintf("Stosunek błędu lokalnego dla N = %d i N = %d: %d\n",2^(w+1),2^w,rl(w));
+        fprintf("Stosunek błędu lokalnego dla N = %d i N = %d: %d\n",2^(w+2),2^(w+1),rl(w));
+        
     end
         
-    fprintf("Oczekiwany stosunek błedu lokalnego: 3.125e-02\n\n")
+    fprintf("Oczekiwany stosunek błedu lokalnego: 3.125e-02\n")
     pause('on');
     pause();
 

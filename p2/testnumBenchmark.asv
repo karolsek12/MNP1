@@ -1,0 +1,23 @@
+function O = testnumBenchmark(f,b, a, x0, xN, y0, N)
+
+    O = zeros(3,3);
+
+    iters = 5;
+
+    for j = 1:3
+
+        tic;
+        O(j,1:2) = testnumError(f,b,a,x0,xN,y0,N,j-1)(1:2);
+        time = toc;
+
+        for w = 2:iters
+            tic;
+            testnumError(f,b,a,x0,xN,y0,N,j-1);
+            time = time + toc;
+            disp(w);
+        end
+
+        O(j,3) = time/iters;
+    end
+
+end

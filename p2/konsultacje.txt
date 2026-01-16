@@ -16,5 +16,7 @@
 
 
 4. dodatkowo
+- kiedy sztywne tracą psyche dla każdej metody
+- wahadło
 - richardson??
 - metoda adaptacyjna??

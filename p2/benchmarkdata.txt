@@ -1,0 +1,23 @@
+N = 10^6 - no point in doing error is eps
+
+N = 10^2
+table         local global      time
+3/8	 3.2689e-12 8.2173e-11  0.0070
+classic  3.1521e-12 7.7040e-11  0.0064
+ralston  2.1569e-12 5.2151e-11  0.0114
+
+N = 10^4 - boring dont inclue
+
+N = 10^3
+table         local global      time
+3/8	 2.2204e-16 9.1038e-15  0.0578
+classic  2.2204e-16 6.4393e-15  0.0570
+ralston  2.2204e-16 4.8850e-15  0.0577
+
+N = 10^2
+table         local global      time
+3/8      2.8375e-07 7.7793e-07  0.00009
+classic  2.7456e-07 7.5132e-07  0.0013
+ralston  1.9459e-07 5.4609e-07  0.00009
+
+test for other functions

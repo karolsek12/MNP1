@@ -34,7 +34,7 @@ for j=2:(N+1)
     
     inc = getButcher23(g,Y(:,j-1),x,h,table); 
     Y(:,j) = Y(:,j-1) + inc;
-    x = x+h;
+    x = x + h;
 
 end
 

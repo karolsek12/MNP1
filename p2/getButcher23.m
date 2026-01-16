@@ -27,18 +27,17 @@ end
 
 for j = 1:4
 
-    nx = 0;
+    nx = B(j,1);
     yx = zeros(size(Y));
 
     for s = 1:(j-1)
-        nx = nx + B(j,s);
-        yx = yx + B(j,s)*K(:,s);
+        yx = yx + B(j,s+1)*K(:,s);
     end
 
     nx = x + nx*h;
     yx = Y + yx;
 
-    K(:,j) = h* calcF(G,yx,nx);
+    K(:,j) = h * calcF(G,yx,nx);
 
 end
 
@@ -46,7 +45,7 @@ b = zeros(ly,1);
 
 for j = 1:4
 
-    b = b+  C(j)*K(:,j);
+    b = b + C(j)*K(:,j);
 
 end
 
